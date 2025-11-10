@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Booking Platform</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎫 Ticket Booking Platform</h1>
+        </header>
+
+        <div class="booking-form">
+            <h2>Book Your Tickets</h2>
+            <form id="ticketForm">
+                <div class="form-group">
+                    <label for="eventName">Event Name:</label>
+                    <select id="eventName" required>
+                        <option value="">Select Event</option>
+                        <option value="Rock Concert">Rock Concert - $50</option>
+                        <option value="Tech Conference">Tech Conference - $100</option>
+                        <option value="Comedy Show">Comedy Show - $30</option>
+                        <option value="Theater Play">Theater Play - $40</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="customerName">Full Name:</label>
+                    <input type="text" id="customerName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="customerEmail">Email:</label>
+                    <input type="email" id="customerEmail" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" min="1" max="10" value="1" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Total Price:</label>
+                    <span id="totalPrice">$0</span>
+                </div>
+                
+                <button type="submit">Book Tickets</button>
+            </form>
+        </div>
+
+        <div class="tickets-list">
+            <h2>Booked Tickets</h2>
+            <div class="search-section">
+                <input type="email" id="searchEmail" placeholder="Search by email...">
+                <button onclick="searchTickets()">Search</button>
+                <button onclick="loadAllTickets()">Show All</button>
+            </div>
+            <div id="ticketsContainer"></div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
